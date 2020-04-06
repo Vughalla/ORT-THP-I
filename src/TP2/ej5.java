@@ -11,11 +11,11 @@ public class ej5 {
 		System.exit(close);
 	}
 	
-	private static int recibirNumero() {
+	private static int ingresarNumero() {
 		int flag = 0;
 		int i = 0;
 		while ( flag == 0 ) {
-			System.out.println("Ingrese un número");
+			System.out.print("Ingrese un número");
 			String num = entrada.nextLine();
 			if (num.matches("[0-9]+")) {
 				i = Integer.parseInt(num);
@@ -34,11 +34,15 @@ public class ej5 {
 	}
 	
 	public static void main(String[] args) {
+		/*
+		 * 5.Realizá un programa que lea una serie de números ingresados por el usuario mientras que el promedio entre
+		 * todos sea menor a 20. Informar la cantidad de valores leidos.
+		 */
 		float promedio = 0;
 		int contador = 1;
 		int total = 0;
 		while (promedio < LIMITE ) {
-			int num = recibirNumero();
+			int num = ingresarNumero();
 			total = total + num;
 			promedio = sacarPromedio(total, contador);
 			System.out.println("El promedio actual es " +promedio);

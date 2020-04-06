@@ -10,11 +10,11 @@ public class ej4 {
 		System.exit(close);
 	}
 	
-	private static int recibirNumero() {
+	private static int ingresarNumero() {
 		int flag = 0;
 		int i = 0;
 		while ( flag == 0 ) {
-			System.out.println("Ingrese un número");
+			System.out.print("Ingrese un número");
 			String num = entrada.nextLine();
 			if (num.matches("[0-9]+")) {
 				i = Integer.parseInt(num);
@@ -37,12 +37,12 @@ public class ej4 {
 		¿Qué pasaría si esta validación no la realizáramos y el ingreso es incorrecto?
 		*/
 
-		int num1 = recibirNumero();
-		int num2 = recibirNumero();
+		int num1 = ingresarNumero();
+		int num2 = ingresarNumero();
 		
 		while (num1 > num2) {
 			System.out.println("Error, el segundo número debe ser igual o mayor que el primero. Ingrese el segundo número nuevamente");
-			num2 = recibirNumero();
+			num2 = ingresarNumero();
 		}
 		
 		if (num2 == num1) {
