@@ -58,21 +58,26 @@ public class ej6 {
 		boolean mejoresAlumnos = false;
 		String[] mejorAlumno = { "" };
 		
-		for (int i=0; i<3; i++) {
+		for (int i=0; i<10; i++) {
 			String nombre = ingresarNombre(i);
 			int prom = ingresarNumero();
 			System.out.println("Se ingreso el alumno: " +nombre+ ". Promedio: " +prom);
 			
 			if (prom > mayorProm) {
 				mayorProm = prom;
-				mejorAlumno[mejorAlumno.length - 1] = nombre;
+
+				mejorAlumno = Arrays.copyOf(mejorAlumno, 1);
+				mejorAlumno[0] = nombre;
+				mejoresAlumnos = false;
+
 			} else if (prom == mayorProm) {
 			      mejorAlumno = Arrays.copyOf(mejorAlumno, mejorAlumno.length + 1);
 			      mejorAlumno[mejorAlumno.length - 1] = nombre;
 			      mejoresAlumnos = true;
 			}
 		}
-		
+		System.out.println("-------Carga de datos finalizada-------");
+
 		for (String i : mejorAlumno) {
 		    constructor.append(i+". ");
 		}
@@ -81,7 +86,7 @@ public class ej6 {
 		if (mejoresAlumnos) {
 			System.out.println("Los mejores alumnos son: " + alumnos +"Promedio :" +mayorProm);
 		} else {
-		System.out.println("El mejor alumno es: " + alumnos +". Promedio :" +mayorProm);
+		System.out.println("El mejor alumno es: " + alumnos +"Promedio :" +mayorProm);
 		}
 		cerrarPrograma(0);
 	}

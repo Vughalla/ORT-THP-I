@@ -14,7 +14,7 @@ public class ej4 {
 		int flag = 0;
 		int i = 0;
 		while ( flag == 0 ) {
-			System.out.print("Ingrese un número");
+			System.out.println("Ingrese un número: ");
 			String num = entrada.nextLine();
 			if (num.matches("[0-9]+")) {
 				i = Integer.parseInt(num);
