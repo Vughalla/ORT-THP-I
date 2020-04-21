@@ -45,10 +45,20 @@ public class ej4 {
 			num2 = ingresarNumero();
 		}
 		
+
 		if (num2 == num1) {
-			System.out.println("Los números son iguales.");
+			System.out.println("Los números son iguales. No hay secuencias que mostrar.");
 		} else {
-			System.out.println(num2 +" es mayor que " +num1);
+			
+			for (int i=num1; i<=num2; i++) {
+				System.out.println(i);
+			}
+			
+			System.out.println("-----------");
+			
+			for (int i=(num1+1); i<num2; i++) {
+				System.out.println(i);
+			}
 		}
 		
 		cerrarPrograma(0);
