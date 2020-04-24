@@ -41,7 +41,7 @@ public class ej13 {
 		while (flagImput == 0) {
 			System.out.println("¿Que materia está cursando? Ingrese: 'taller' / 'fundamentos' / 'matematica'.");
 			materia = entrada.nextLine();
-			if (materia.toLowerCase().matches("taller") || materia.toLowerCase().matches("fundamentos") || materia.toLowerCase().matches("matemática")) {
+			if (materia.toLowerCase().matches("taller") || materia.toLowerCase().matches("fundamentos") || materia.toLowerCase().matches("matematica")) {
 				System.out.println("Materia ingresada.");
 				flagImput = 1;
 			} else {
@@ -51,22 +51,42 @@ public class ej13 {
 		return materia;
 	}
 	private static void informarMasCursada(int taller, int fundamentos, int matematica) {
-		String masCursada;
-	
-		if (taller > fundamentos) {
+		String masCursada = "";
+		
+		if (taller == fundamentos) {
+			if (fundamentos == matematica) {
+				masCursada = ""; //las 3 son iguales
+			} else {
+				if (matematica > taller) {
+					masCursada = "matematica"; //la mayor es matematica
+				} else {
+					masCursada = ""; //taller y fundamentos son las mayores
+				}
+			}
+		} else if (fundamentos == matematica) {
+			if (taller > fundamentos) {
+				masCursada = "taller"; //la mayor es taller
+			} else {
+				masCursada = ""; //fundamentos y matematica son las mayores.
+			}
+		} else if (taller > fundamentos) {
 			if (taller > matematica) {
-				masCursada = "taller";
+				masCursada = "taller"; //la mayor es taller
 			} else {
-				masCursada = "matematica";
+				masCursada = "matematica"; //la mayor es matematica
 			}
+		} else if (fundamentos > matematica) {
+			masCursada = "fundamentos"; //el mayor es fundamentos
 		} else {
-			if (fundamentos > matematica) {
-				masCursada = "fundamentos";
-			} else {
-				masCursada = "matematica";
-			}
+			masCursada = "matematica"; //el mayor es matematica
 		}
-		System.out.println("La materia más cursada es " +masCursada);
+				
+		
+		if (masCursada != "") {
+			System.out.println("La materia con más cantidad de alumnos inscriptos es: "+masCursada+ ".");			
+		} else {
+			System.out.println("Hay empate entre materias con mayor cantidad de alumnos.");
+		}
 	}
 		
 	
