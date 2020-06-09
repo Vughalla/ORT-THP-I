@@ -1,0 +1,61 @@
+package TP1;
+import java.util.Scanner;
+public class ej14 {
+	static Scanner entrada = new Scanner(System.in);
+	static String OPERACIONES[] = {"SUMA => s", "RESTA => r", "PRODUCTO => p", "DIVISIÓN => d"};
+	
+	public static void cerrarPrograma(int close) {
+		entrada.close();
+		System.out.println("----------Programa finalizado----------");
+		System.exit(close);
+	}
+	
+	public static int pedirNumero() {
+		System.out.print("Por favor ingrese un número: ");
+		int num = entrada.nextInt();
+		System.out.println("Número ingresado.");
+		return num;
+	}
+	
+	public static void main(String[] args) {
+		/*14. Construir un programa que simule el funcionamiento de una calculadora que puede
+		realizar las cuatro operaciones aritméticas básicas (suma, resta, producto y división) con
+		valores numéricos enteros.
+		En un principio, el usuario debe especificar la operación que desea realizar (s para la suma,
+		r para la resta, p para el producto y d para la división) y luego, deberá ingresar dos números
+		enteros para así realizar la operación. Informar el resultado por pantalla.
+		Nota: Se recomienda el empleo de una sentencia switch.args */
+		
+		System.out.println("¿Qué operación desea realizar?");
+		for (int i = 0; i < OPERACIONES.length; i++) {
+			System.out.println(OPERACIONES[i]);
+		}
+		
+		String operacion = entrada.next();
+		if (operacion.contains("s") || operacion.contains("r") || operacion.contains("p") || operacion.contains("d")) {
+			int num1, num2, resultado = 0;	
+			num1 = pedirNumero();
+			num2 = pedirNumero();
+			
+			switch (operacion) {
+			case "s":
+				resultado = (num1 + num2);
+				break;
+			case "r":
+				resultado = (num1 - num2);
+				break;
+			case "p":
+				resultado = (num1 * num2);
+				break;
+			case "d":
+				resultado = (num1 / num2);
+				break;
+			}
+			System.out.println("El resultado es: " +resultado);
+			cerrarPrograma(0);
+		} else {
+			System.out.println("Error. Ha ingresado una operación incorrecta.");
+			cerrarPrograma(1);
+		}
+	}
+}
