@@ -1,4 +1,4 @@
-package ej1;
+package modeloParcial1;
 
 public class Departamento {
 
