@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Edificio {
 	String direccion;
 	private int cantDepartamentos;
-	public ArrayList<Departamento> departamentos;
-	public ArrayList<Departamento> listaMorosos;
+	private ArrayList<Departamento> departamentos;
+	private ArrayList<Departamento> listaMorosos;
 	
 	/**
 	 * Constructor de la clase Edificio
@@ -22,7 +22,7 @@ public class Edificio {
 	}
 	
 	/**
-	 * Setea el argumento direccion según el parámetro brindado.
+	 * Setea el argumento direccion segï¿½n el parï¿½metro brindado.
 	 * @param direccion
 	 */
 	private void setDireccion(String direccion) {
@@ -30,7 +30,7 @@ public class Edificio {
 	}
 	
 	/**
-	 * Setea el argumento cantDepartamentos según el parámetro brindado.
+	 * Setea el argumento cantDepartamentos segï¿½n el parï¿½metro brindado.
 	 * @param cantDepartamentos
 	 */
 	private void setCantDepartamentos(int cantDepartamentos) {
@@ -46,7 +46,7 @@ public class Edificio {
 	}
 	
 	/**
-	 * Retorna la capacidad máxima de unidades que puede albergar el edificio.
+	 * Retorna la capacidad mï¿½xima de unidades que puede albergar el edificio.
 	 * @return
 	 */
 	public int getCantDepartamentos() {
@@ -68,7 +68,7 @@ public class Edificio {
 	}
 
 	/**
-	 * Itera la lista de departamentos para verificar que el numero de unidad no esté repetido, retorna true o false si la unidad existe.
+	 * Itera la lista de departamentos para verificar que el numero de unidad no estï¿½ repetido, retorna true o false si la unidad existe.
 	 * @param depto
 	 * @return
 	 */
@@ -110,7 +110,7 @@ public class Edificio {
 				depto = departamentos.get(i);
 			} else {
 				i = i+1;
-				System.out.println("No se encontró la unidad brindada.");
+				System.out.println("No se encontrï¿½ la unidad brindada.");
 			}
 		}
 		return depto;
@@ -127,7 +127,7 @@ public class Edificio {
 	
 	public void listaMoroso() {
 		for(Departamento depto: listaMorosos) {
-			System.out.println("La unidad funcional N°" +depto.getNumeroUnidad()+" debe :$"+depto.getSaldo()+".-");
+			System.out.println("La unidad funcional Nï¿½" +depto.getNumeroUnidad()+" debe :$"+depto.getSaldo()+".-");
 		}
 	}
 		
