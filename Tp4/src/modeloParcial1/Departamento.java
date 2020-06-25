@@ -78,6 +78,6 @@ public class Departamento {
 	
 	@Override
 	public String toString() {
-		return "Departamento [numeroUnidad= " +getNumeroUnidad()+ ", saldo= " +getSaldo()+ "]";
+		return "Departamento [numUnidad= " +numUnidad+ ", saldo= " +saldo+ ", propietario= " +propietario+ ", dniProp= " +dniProp+ "]";
 	}
 }
